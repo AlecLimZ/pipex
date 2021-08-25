@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 10:24:18 by leng-chu          #+#    #+#             */
-/*   Updated: 2021/08/25 11:19:56 by leng-chu         ###   ########.fr       */
+/*   Created: 2021/08/25 16:51:18 by leng-chu          #+#    #+#             */
+/*   Updated: 2021/08/25 17:01:18 by leng-chu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pipex.h"
 
-static char	*ft_conc(char *str, char *filename)
+char	*ft_conc(char *str, char *filename)
 {
 	char	*buf;
 
@@ -23,11 +23,11 @@ static char	*ft_conc(char *str, char *filename)
 	return (buf);
 }
 
-static char	**ft_path(void)
+char	**ft_get_path(void)
 {
-	int		i;
-	char	*p;
-	char	**str;
+	int			i;
+	char		*p;
+	char		**str;
 
 	i = 0;
 	str = NULL;
@@ -54,7 +54,7 @@ void	ft_exec(char **argv)
 	int		i;
 
 	i = 0;
-	path = ft_path();
+	path = ft_get_path();
 	while (path[i])
 	{
 		buf = ft_conc(path[i], argv[0]);
@@ -67,5 +67,5 @@ void	ft_exec(char **argv)
 			i++;
 	}
 	if (i >= 0)
-		ft_error("Could not find command\n");
+		ft_error_handling("Could not find command\n");
 }

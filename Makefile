@@ -6,12 +6,12 @@
 #    By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 17:33:24 by leng-chu          #+#    #+#              #
-#    Updated: 2021/08/25 10:51:28 by leng-chu         ###   ########.fr        #
+#    Updated: 2021/08/25 17:16:14 by leng-chu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= pipex.a
-SRC		= ft_pipex.c ft_execute.c ft_utils.c
+NAME	= pipex
+SRC		= ft_pipex.c ft_execute.c ft_utils.c main.c
 #BONUS	=
 CC		= gcc -Wall -Wextra -Werror
 OBJ		= $(SRC:%.c=%.o)
@@ -32,14 +32,7 @@ $(OBJB):	$(BONUS)
 			@$(CC) -I. -c $^
 
 $(NAME):	$(OBJ)
-			cp $(LIBFT_L) $(NAME)
-			ar rc $(NAME) $(OBJ)
-			ranlib $@
-
-bonus:		$(OBJ) $(OBJB)
-			cp $(LIBFT_L) $(NAME)
-			ar rc $(NAME) $(OBJ) $(OBJB)
-			ranlib $@
+			$(CC) -o $(NAME) $(OBJ) $(LIBFT_L)
 
 clean:		
 			make -C $(LIBFT) clean
