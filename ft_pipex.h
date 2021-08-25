@@ -6,7 +6,7 @@
 /*   By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:50:57 by leng-chu          #+#    #+#             */
-/*   Updated: 2021/08/25 18:12:34 by leng-chu         ###   ########.fr       */
+/*   Updated: 2021/08/25 19:46:40 by leng-chu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@
 # include <stddef.h>
 # include "libft/libft.h"
 
-extern char	**environ;
-
 //inside ft_pipex.c
-void	ft_pipex(char *input, char *cmd1, char *cmd2, char *output);
-void	ft_pid1(int fd1, int *piped, char *cmd1);
-void	ft_pid2(int fd2, int *piped, char *cmd2);
+void	ft_pipex(char **argv, char **envp);
+void	ft_pid1(int fd1, int *piped, char *cmd1, char **envp);
+void	ft_pid2(int fd2, int *piped, char *cmd2, char **envp);
 
 //inside ft_execute.c
-void	ft_exec(char **argv);
+void	ft_exec(char **argv, char **envp);
 
 //inside ft_utils.c
 char	*ft_strcat(char *s1, const char *s2);

@@ -12,11 +12,11 @@
 
 #include "ft_pipex.h"
 
-int	main(int argc, char **argv)
+int	main(int argc, char **argv, char **envp)
 {
 	if (argc != 5)
 		ft_error("Please type like: ./pipex file1 cmd1 cmd2 file2\n");
 	else
-		ft_pipex(argv[1], argv[2], argv[3], argv[4]);
+		ft_pipex(argv, envp);
 	return (0);
 }

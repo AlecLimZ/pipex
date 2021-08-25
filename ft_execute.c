@@ -6,7 +6,7 @@
 /*   By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:51:18 by leng-chu          #+#    #+#             */
-/*   Updated: 2021/08/25 18:12:48 by leng-chu         ###   ########.fr       */
+/*   Updated: 2021/08/25 19:46:27 by leng-chu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_conc(char *str, char *filename)
 	return (buf);
 }
 
-char	**ft_get_path(void)
+char	**ft_get_path(char **envp)
 {
 	int			i;
 	char		*p;
@@ -31,11 +31,11 @@ char	**ft_get_path(void)
 
 	i = 0;
 	str = NULL;
-	while (environ[i])
+	while (envp[i])
 	{
-		if ((ft_strnequ(environ[i], "PATH", 4)) == 1)
+		if ((ft_strnequ(envp[i], "PATH", 4)) == 1)
 		{
-			p = environ[i];
+			p = envp[i];
 			p += 5;
 			str = ft_split(p, ':');
 			i = -34;
@@ -47,18 +47,18 @@ char	**ft_get_path(void)
 	return (str);
 }
 
-void	ft_exec(char **argv)
+void	ft_exec(char **argv, char **envp)
 {
 	char	**path;
 	char	*buf;
 	int		i;
 
 	i = 0;
-	path = ft_get_path();
+	path = ft_get_path(envp);
 	while (path[i])
 	{
 		buf = ft_conc(path[i], argv[0]);
-		if (execve(buf, argv, environ) != -1)
+		if (execve(buf, argv, envp) != -1)
 		{
 			i = -34;
 			break ;
