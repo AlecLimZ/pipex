@@ -6,12 +6,12 @@
 #    By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/19 17:33:24 by leng-chu          #+#    #+#              #
-#    Updated: 2021/08/24 20:08:43 by leng-chu         ###   ########.fr        #
+#    Updated: 2021/08/25 10:51:28 by leng-chu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= pipex.a
-SRC		= ft_pipex.c ft_execute.c
+SRC		= ft_pipex.c ft_execute.c ft_utils.c
 #BONUS	=
 CC		= gcc -Wall -Wextra -Werror
 OBJ		= $(SRC:%.c=%.o)
