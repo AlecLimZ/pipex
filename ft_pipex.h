@@ -6,7 +6,7 @@
 /*   By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:50:57 by leng-chu          #+#    #+#             */
-/*   Updated: 2021/08/25 17:19:21 by leng-chu         ###   ########.fr       */
+/*   Updated: 2021/08/25 18:12:34 by leng-chu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	ft_exec(char **argv);
 //inside ft_utils.c
 char	*ft_strcat(char *s1, const char *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
-void	ft_error_handling(char *str);
+void	ft_error(char *str);
 
 #endif /* !FT_PIPEX_H */

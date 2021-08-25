@@ -6,13 +6,13 @@
 /*   By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:51:42 by leng-chu          #+#    #+#             */
-/*   Updated: 2021/08/25 17:07:26 by leng-chu         ###   ########.fr       */
+/*   Updated: 2021/08/25 18:14:10 by leng-chu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pipex.h"
 
-void	ft_error_handling(char *str)
+void	ft_error(char *str)
 {
 	ft_putstr_fd(str, 2);
 	_exit(1);

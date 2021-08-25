@@ -6,7 +6,7 @@
 /*   By: leng-chu <leng-chu@student.42kl.edu.m      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:51:18 by leng-chu          #+#    #+#             */
-/*   Updated: 2021/08/25 17:01:18 by leng-chu         ###   ########.fr       */
+/*   Updated: 2021/08/25 18:12:48 by leng-chu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void	ft_exec(char **argv)
 			i++;
 	}
 	if (i >= 0)
-		ft_error_handling("Could not find command\n");
+		ft_error("Could not find command\n");
 }
